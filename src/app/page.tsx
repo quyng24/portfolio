@@ -1,129 +1,33 @@
 import Navbar from "@/components/Navbar";
 import TextAnimate from "@/components/TextAnimate";
-import { FaGithub, FaFacebookF } from "react-icons/fa";
-import {
-  ArrowUpRight,
-  Briefcase,
-  Calendar,
-  CheckCircle2,
-  ChevronRight,
-  Code2,
-  Cpu,
-  Database,
-  ExternalLink,
-  FileText,
-  GitBranch,
-  GitBranchPlus,
-  Layout,
-  Link,
-  ListEnd,
-  Mail,
-  MapPin,
-  Send,
-  Server,
-  Terminal,
-} from "lucide-react";
+import { Briefcase, Calendar, CheckCircle2, ChevronRight } from "lucide-react";
 import Footer from "@/components/Footer";
+import TechStack from "@/components/TechStack";
+import ProjectCard from "@/components/ProjectCard";
+import Image from "next/image";
+import { ProjectsSection } from "@/components/ProjectsSection";
 
 export default function Home() {
-  const projects = [
-    {
-      image:
-        "https://raw.githubusercontent.com/quyng24/pdtwd/refs/heads/master/src/app/favicon.ico?token=GHSAT0AAAAAADSOPT64YTQ3IIVX7CAPKYHE2QG4B2Q",
-      title: "Taekwondo Club Management System",
-      description:
-        "Ứng dụng nhận diện khuôn mặt để điểm danh võ sinh tự động, xử lý logic học phí phức tạp.",
-      techStack: ["Python", "FastAPI", "PostgreSQL", "Next.Js"],
-      demoLink: "https://panda-taekwondo.vercel.app",
-      githubLink: "",
-      caseStudy: "#",
-    },
-    {
-      image: "",
-      title: "E-Commerce Platform",
-      description:
-        "Nền tảng bán hàng đa kênh với khả năng xử lý hàng nghìn giao dịch mỗi giây.",
-      techStack: ["NodeJS", "NestJS", "VueJs", "PostgreSQL"],
-      demoLink: "#",
-      githubLink: "",
-      caseStudy: "#",
-    },
-    {
-      image: "",
-      title: "Mobile Fitness App",
-      description:
-        "Ứng dụng theo dõi sức khỏe và lịch trình tập luyện thời gian thực.",
-      techStack: ["React Native", "Firebase", "Supabase"],
-      demoLink: "#",
-      githubLink: "",
-      caseStudy: "#",
-    },
-  ];
-
   const experiences = [
     {
-      company: "Công ty ABC",
+      company: "LG CNS Viet Nam",
       role: "Software Engineer",
-      period: "2022 - 2024",
+      period: "2024 - Present",
       description: [
-        "Phát triển ứng dụng web bằng React và NodeJs.",
-        "Tối ưu hiệu năng hệ thống, giảm thời gian phản hồi xuống 30%.",
-        "Triển khai CI/CD với GitHub Actions và Vercel.",
+        "Develop and maintain web interfaces using ReactJS and NextJS.",
+        "Build reusable and responsive UI components using Figma design principles.",
+        "Integrate REST APIs to process and display user data.",
+        "It supports optimized performance and improves the user experience across multiple devices.",
+        "Collaborate with the team to develop and fix system features.",
       ],
-      skills: ["React", "Node.js", "CI/CD", "AWS"],
-    },
-    {
-      company: "Công ty XYZ",
-      role: "Frontend Developer",
-      period: "2020 - 2022",
-      description: [
-        "Xây dựng giao diện người dùng bằng VueJs và React Native.",
-        "Tích hợp API backend và tối ưu trải nghiệm người dùng.",
-        "Hợp tác với nhóm thiết kế để cải thiện UI/UX.",
-      ],
-      skills: ["VueJS", "React Native", "Tailwind", "Figma"],
-    },
-  ];
-
-  const techStack = [
-    {
-      category: "Frontend",
-      icon: <Layout className="text-blue-500" size={28} />,
-      items: ["React", "Next.js", "VueJs", "Tailwind CSS", "TypeScript"],
-      color: "border-t-blue-500",
-    },
-    {
-      category: "Backend",
-      icon: <Server className="text-emerald-500" size={28} />,
-      items: [
-        "Node.js",
-        "Express",
-        "NestJS",
-        "PostgreSQL",
-        "Python",
-        "FastApi",
-      ],
-      color: "border-t-emerald-500",
-    },
-    {
-      category: "DevOps",
-      icon: <Cpu className="text-orange-500" size={28} />,
-      items: ["Docker", "Render", "GitHub Actions", "Vercel"],
-      color: "border-t-orange-500",
-    },
-    {
-      category: "Tools",
-      icon: <Terminal className="text-purple-500" size={28} />,
-      items: [
+      skills: [
+        "ReactJS",
+        "NextJS",
+        "TypeScript",
+        "TailwindCSS",
+        "Redux",
         "Git",
-        "Github",
-        "Figma",
-        "Postman",
-        "Jest",
-        "Supabase",
-        "Firebase",
       ],
-      color: "border-t-purple-500",
     },
   ];
 
@@ -138,12 +42,15 @@ export default function Home() {
           <div className="absolute inset-0 bg-blue-100 rounded-full blur-3xl opacity-50 scale-150 animate-pulse"></div>
 
           <div className="relative z-10">
-            <div className="w-48 h-48 md:w-72 md:h-72 bg-white p-3 rounded-3xl shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
-              <div className="w-full h-full rounded-2xl overflow-hidden bg-slate-100">
-                <img
+            <div className="w-48 h-48 md:w-72 md:h-72 bg-white dark:bg-slate-800 p-3 rounded-3xl shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
+              <div className="relative w-full h-full rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-900">
+                <Image
                   src="/images/avatar_portfolio.jpg"
                   alt="Nguyễn Văn Quý"
-                  className="object-cover w-full h-full hover:scale-110 transition-transform duration-700"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 192px, 288px"
+                  className="object-cover hover:scale-110 transition-transform duration-700"
                 />
               </div>
             </div>
@@ -202,117 +109,7 @@ export default function Home() {
       </header>
 
       {/* Projects Section */}
-      <section
-        id="projects"
-        className="py-24 px-4 bg-slate-50/50 dark:bg-slate-950"
-      >
-        <div className="max-w-7xl mx-auto">
-          {/* Header */}
-          <div className="mb-16">
-            <h2 className="text-4xl font-extrabold text-slate-900 dark:text-white mb-4">
-              Projects <span className="text-blue-600">Featured</span>
-            </h2>
-            <div className="w-20 h-1.5 bg-blue-600 rounded-full"></div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
-              >
-                {/* Image Preview Container */}
-                <div className="relative aspect-video overflow-hidden">
-                  {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  ) : (
-                    <div className="flex items-center justify-center h-full text-slate-400">
-                      No Image Preview
-                    </div>
-                  )}
-
-                  {/* Desktop Overlay */}
-                  <div className="absolute inset-0 bg-slate-900/60 opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 hidden md:flex items-center justify-center gap-4">
-                    <a
-                      href={project.demoLink}
-                      target="_blank"
-                      className="p-3 bg-white rounded-full text-slate-900 hover:bg-blue-600 hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
-                    <a
-                      href={project.githubLink !== "" ? project.demoLink : ""}
-                      target="_blank"
-                      className="p-3 bg-white rounded-full text-slate-900 hover:bg-blue-600 hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0 delay-75"
-                    >
-                      <Link size={20} />
-                    </a>
-                  </div>
-                </div>
-
-                {/* Content Area */}
-                <div className="p-6 flex flex-col grow">
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.techStack.map((tech, i) => (
-                      <span
-                        key={i}
-                        className="text-[10px] uppercase font-bold px-2 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-md"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 line-clamp-1">
-                    {project.title}
-                  </h3>
-
-                  <p className="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2">
-                    {project.description}
-                  </p>
-
-                  {/* Mobile Action Buttons */}
-                  <div className="grid grid-cols-2 gap-3 mb-6 md:hidden">
-                    <a
-                      href={project.demoLink}
-                      target="_blank"
-                      className="flex items-center justify-center gap-2 py-2.5 bg-blue-600 text-white rounded-xl text-sm font-bold active:scale-95 transition-transform"
-                    >
-                      <ExternalLink size={16} /> Demo
-                    </a>
-                    <a
-                      href={project.githubLink !== "" ? project.demoLink : ""}
-                      target="_blank"
-                      className="flex items-center justify-center gap-2 py-2.5 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-xl text-sm font-bold active:scale-95 transition-transform"
-                    >
-                      <Link size={16} /> Github
-                    </a>
-                  </div>
-
-                  <div className="mt-auto pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center">
-                    <a
-                      href={project.caseStudy}
-                      className="inline-flex items-center gap-2 text-sm font-bold text-slate-700 dark:text-slate-300 hover:text-blue-600"
-                    >
-                      <FileText size={18} className="text-blue-600" />
-                      Case Study
-                    </a>
-                    <ArrowUpRight
-                      size={18}
-                      className="text-slate-400 md:group-hover:text-blue-600 transition-colors"
-                    />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProjectsSection />
 
       <section
         id="experience"
@@ -389,66 +186,7 @@ export default function Home() {
       </section>
 
       {/* TechStack Section */}
-      <section
-        id="techstack"
-        className="py-24 px-4 bg-slate-50/50 dark:bg-slate-950"
-      >
-        <div className="max-w-6xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-4xl font-extrabold text-slate-900 dark:text-white">
-              Skills <span className="text-blue-600">Expertise</span>
-            </h2>
-            <p className="text-slate-500 dark:text-slate-400 max-w-lg mx-auto">
-              These are the tools and languages ​​I have mastered during the
-              process of building real-world projects.
-            </p>
-            <div className="w-24 h-1.5 bg-blue-600 mx-auto rounded-full"></div>
-          </div>
-
-          {/* Grid Container */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {techStack.map((stack, index) => (
-              <div
-                key={index}
-                className={`group bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-sm border-t-4 ${stack.color} border-l border-r border-b border-slate-100 dark:border-slate-800 transition-all duration-300 hover:shadow-xl hover:-translate-y-2`}
-              >
-                {/* Icon Container */}
-                <div className="mb-6 flex justify-center">
-                  <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-2xl group-hover:scale-110 group-hover:bg-white dark:group-hover:bg-slate-700 transition-all duration-300 shadow-inner">
-                    {stack.icon}
-                  </div>
-                </div>
-
-                {/* Title */}
-                <h4 className="text-xl font-bold mb-6 text-center text-slate-800 dark:text-white">
-                  {stack.category}
-                </h4>
-
-                {/* Skills Badge Cloud */}
-                <div className="flex flex-wrap justify-center gap-2">
-                  {stack.items.map((item, i) => (
-                    <span
-                      key={i}
-                      className="text-xs font-bold py-1.5 px-3 bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-lg border border-slate-100 dark:border-slate-700 group-hover:border-blue-200 dark:group-hover:border-blue-900 transition-colors"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Footer TechStack */}
-          <div className="mt-16 text-center">
-            <p className="text-sm text-slate-400 italic">
-              And many other supporting libraries/tools depending on the project
-              requirements...
-            </p>
-          </div>
-        </div>
-      </section>
+      <TechStack />
 
       {/* Contact Section */}
       <Footer />

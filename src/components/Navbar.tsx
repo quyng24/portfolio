@@ -13,7 +13,6 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
 
     if (isOpen) {
-      // Ngăn cuộn trang nhưng không làm giật layout
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
@@ -27,8 +26,8 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Projects", href: "#projects" },
-    { name: "TechStack", href: "#techstack" },
     { name: "Experience", href: "#experience" },
+    { name: "TechStack", href: "#techstack" },
     { name: "Contact", href: "#contact" },
   ];
 
