@@ -1,46 +1,9 @@
 "use client";
 
+import { techStack } from "@/stores/data_mock";
 import { motion } from "framer-motion";
-import { Cpu, Layout, PenTool, Server } from "lucide-react";
 
 export default function TechStack() {
-  const techStack = [
-    {
-      category: "Frontend",
-      icon: <Layout size={28} />,
-      items: [
-        "React",
-        "Next.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "Redux",
-        "Framer Motion",
-      ],
-      gradient: "from-blue-500 to-cyan-400",
-      iconColor: "text-blue-500",
-    },
-    {
-      category: "Backend",
-      icon: <Server size={28} />,
-      items: ["Node.js", "NestJS", "PostgreSQL", "Python", "FastAPI", "Redis"],
-      gradient: "from-emerald-500 to-teal-400",
-      iconColor: "text-emerald-500",
-    },
-    {
-      category: "DevOps",
-      icon: <Cpu size={28} />,
-      items: ["Docker", "GitHub Actions", "Nginx", "Vercel", "AWS", "Linux"],
-      gradient: "from-orange-500 to-amber-400",
-      iconColor: "text-orange-500",
-    },
-    {
-      category: "Design & Tools",
-      icon: <PenTool size={28} />,
-      items: ["Figma", "Postman", "Git", "Supabase", "Firebase", "Jest"],
-      gradient: "from-purple-500 to-pink-400",
-      iconColor: "text-purple-500",
-    },
-  ];
   return (
     <section
       id="techstack"
@@ -77,46 +40,60 @@ export default function TechStack() {
         </div>
 
         {/* Grid Container */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
           {techStack.map((stack, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="group relative"
+              className={`relative group ${
+                index === 0
+                  ? "md:col-span-3"
+                  : index === 1
+                    ? "md:col-span-3"
+                    : "md:col-span-2 lg:col-span-3"
+              }`}
             >
-              <div
-                className={`absolute -inset-0.5 bg-linear-to-r ${stack.gradient} rounded-3xl blur opacity-20 group-hover:opacity-70 transition duration-500`}
-              ></div>
-
-              <div className="relative h-full bg-white dark:bg-slate-900 p-8 rounded-4xl border border-slate-100 dark:border-slate-800 flex flex-col items-center shadow-xl shadow-slate-200/50 dark:shadow-none">
-                {/* Icon Container với hiệu ứng xoay nhẹ */}
-                <div className="mb-6 relative">
-                  <div className="absolute inset-0 bg-blue-500/20 blur-xl rounded-full scale-0 group-hover:scale-150 transition-transform duration-500"></div>
-                  <div className="relative p-5 bg-slate-50 dark:bg-slate-800/50 rounded-2xl `group-hover:rotate-10 transition-transform duration-300 border border-slate-100 dark:border-slate-700">
-                    <div className="w-10 h-10 text-slate-700 dark:text-slate-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                      {stack.icon}
-                    </div>
+              <div className="relative h-full bg-slate-50/50 dark:bg-slate-900/50 backdrop-blur-sm p-6 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-blue-500/30 transition-all duration-500">
+                {/* Header Card */}
+                <div className="flex items-center gap-4 mb-6">
+                  <div
+                    className={`p-3 rounded-2xl bg-white dark:bg-slate-800 shadow-sm text-slate-700 dark:text-slate-300 group-hover:scale-110 transition-transform duration-300`}
+                  >
+                    {stack.icon}
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold text-slate-800 dark:text-white">
+                      {stack.category}
+                    </h4>
+                    <div
+                      className={`h-1 w-8 rounded-full bg-linear-to-r ${stack.gradient}`}
+                    />
                   </div>
                 </div>
 
-                {/* Title */}
-                <h4 className="text-xl font-bold mb-6 text-slate-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  {stack.category}
-                </h4>
-
-                {/* Skills Badge Cloud */}
-                <div className="flex flex-wrap justify-center gap-2">
+                {/* Tags Cloud */}
+                <div className="flex flex-wrap gap-2">
                   {stack.items.map((item, i) => (
-                    <span
+                    <motion.span
                       key={i}
-                      className="text-[11px] uppercase tracking-wider font-bold py-1 px-3 bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 rounded-lg border border-transparent group-hover:border-blue-500/20 transition-all"
+                      whileHover={{ scale: 1.05 }}
+                      className="group/tag relative flex items-center gap-1.5 py-1.5 px-3 rounded-full 
+                                bg-white dark:bg-slate-800/80 
+                                text-slate-600 dark:text-slate-400 
+                                text-xs font-medium border border-slate-200 dark:border-slate-700/50
+                                hover:bg-blue-50 dark:hover:bg-blue-900/20 
+                                hover:text-blue-600 dark:hover:text-blue-300 
+                                hover:border-blue-200 dark:hover:border-blue-800
+                                transition-all duration-300 cursor-default"
                     >
+                      <span
+                        className={`w-1.5 h-1.5 rounded-full bg-linear-to-r ${stack.gradient} opacity-40 group-hover/tag:opacity-100`}
+                      />
                       {item}
-                    </span>
+                    </motion.span>
                   ))}
                 </div>
               </div>

@@ -3,54 +3,9 @@
 import { useEffect, useState } from "react";
 import CaseStudyModal from "./CaseStudyModal";
 import ProjectCard, { Project } from "./ProjectCard";
+import { projects } from "@/stores/data_mock";
 
 export const ProjectsSection = () => {
-  const projects = [
-    {
-      image: "/images/favicon.ico",
-      title: "Taekwondo Club Management System",
-      description:
-        "Facial recognition application for automated student attendance tracking and handling complex tuition fee logic.",
-      techStack: ["Python", "FastAPI", "PostgreSQL", "Next.Js"],
-      demoLink: "https://panda-taekwondo.vercel.app",
-      githubLink: "",
-      caseStudyContent: {
-        problem: "string",
-        solution: "",
-        features: ["1", "2"],
-        results: "",
-      },
-    },
-    {
-      image: "",
-      title: "Project Sumary",
-      description: "The website provides statistics for a few small products.",
-      techStack: ["NodeJS", "NestJS", "VueJs", "PostgreSQL"],
-      demoLink: "https://project-sumary.vercel.app",
-      githubLink: "",
-      caseStudyContent: {
-        problem: "string",
-        solution: "",
-        features: ["1", "2"],
-        results: "",
-      },
-    },
-    {
-      image: "",
-      title: "Mobile Fitness App",
-      description:
-        "Ứng dụng theo dõi sức khỏe và lịch trình tập luyện thời gian thực.",
-      techStack: ["React Native", "Firebase", "Supabase"],
-      demoLink: "#",
-      githubLink: "",
-      caseStudyContent: {
-        problem: "string",
-        solution: "",
-        features: ["1", "2"],
-        results: "",
-      },
-    },
-  ];
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
