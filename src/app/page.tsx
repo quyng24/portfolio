@@ -3,7 +3,6 @@ import TextAnimate from "@/components/TextAnimate";
 import { Briefcase, Calendar, CheckCircle2, ChevronRight } from "lucide-react";
 import Footer from "@/components/Footer";
 import TechStack from "@/components/TechStack";
-import ProjectCard from "@/components/ProjectCard";
 import Image from "next/image";
 import { ProjectsSection } from "@/components/ProjectsSection";
 

@@ -48,13 +48,12 @@ export default function TechStack() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`relative group ${
-                index === 0
+              className={`relative group ${index === 0
                   ? "md:col-span-3"
                   : index === 1
                     ? "md:col-span-3"
                     : "md:col-span-2 lg:col-span-3"
-              }`}
+                }`}
             >
               <div className="relative h-full bg-slate-50/50 dark:bg-slate-900/50 backdrop-blur-sm p-6 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-blue-500/30 transition-all duration-500">
                 {/* Header Card */}
@@ -80,14 +79,7 @@ export default function TechStack() {
                     <motion.span
                       key={i}
                       whileHover={{ scale: 1.05 }}
-                      className="group/tag relative flex items-center gap-1.5 py-1.5 px-3 rounded-full 
-                                bg-white dark:bg-slate-800/80 
-                                text-slate-600 dark:text-slate-400 
-                                text-xs font-medium border border-slate-200 dark:border-slate-700/50
-                                hover:bg-blue-50 dark:hover:bg-blue-900/20 
-                                hover:text-blue-600 dark:hover:text-blue-300 
-                                hover:border-blue-200 dark:hover:border-blue-800
-                                transition-all duration-300 cursor-default"
+                      className={"group/tag relative flex items-center gap-1.5 py-1.5 px-3 rounded-full bg-white dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 text-xs font-medium border border-slate-200 dark:border-slate-700/50hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-600 dark:hover:text-blue-300 hover:border-blue-200 dark:hover:border-blue-800transition-all duration-300 cursor-default"}
                     >
                       <span
                         className={`w-1.5 h-1.5 rounded-full bg-linear-to-r ${stack.gradient} opacity-40 group-hover/tag:opacity-100`}
