@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     canonical: site.url,
   },
   icons: {
-    icon: "images/logo_portfolio.svg",
+    icon: "images/portfolio-logo.svg",
   },
 };
 

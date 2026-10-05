@@ -51,6 +51,7 @@ export interface Project {
   name: string;
   tagline: string;
   description: string;
+  image?: string;
   role: string;
   year: string;
   tech: string[];
