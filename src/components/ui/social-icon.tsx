@@ -1,12 +1,12 @@
 import type { ComponentType } from "react";
 import { Mail } from "lucide-react";
 import type { SocialPlatform } from "@/types";
-import { GithubIcon, LinkedinIcon, XIcon } from "@/components/ui/icons";
+import { GithubIcon, LinkedinIcon, FacebookIcon } from "@/components/ui/icons";
 
 const icons: Record<SocialPlatform, ComponentType<{ size?: number }>> = {
   github: GithubIcon,
   linkedin: LinkedinIcon,
-  x: XIcon,
+  facebook: FacebookIcon,
   email: Mail,
   dribbble: Mail,
 };

@@ -3,7 +3,7 @@ export interface NavLink {
   href: string;
 }
 
-export type SocialPlatform = "github" | "linkedin" | "x" | "email" | "dribbble";
+export type SocialPlatform = "github" | "linkedin" | "facebook" | "email" | "dribbble";
 
 export interface SocialLink {
   platform: SocialPlatform;
