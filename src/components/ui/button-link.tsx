@@ -24,11 +24,11 @@ export function ButtonLink({
   const isExternal = href.startsWith("http") || href.startsWith("mailto:");
 
   const classes = cn(
-    "group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium transition-all duration-300 focus-visible:outline-2 focus-visible:outline-accent",
+    "group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-all duration-150 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-accent",
     variant === "primary" &&
-      "bg-text text-bg hover:bg-accent hover:text-bg",
+      "border border-white/15 bg-accent text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.25),0_0_24px_-4px_rgba(94,106,210,0.6)] hover:bg-[#6875e5] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_0_28px_-2px_rgba(94,106,210,0.8)]",
     variant === "secondary" &&
-      "border border-border-strong text-text hover:border-accent/60 hover:text-accent-text",
+      "border border-border bg-white/[0.03] text-text hover:border-border-strong hover:bg-white/[0.07] hover:text-white backdrop-blur-sm",
     className,
   );
 

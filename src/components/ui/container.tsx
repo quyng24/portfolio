@@ -7,9 +7,18 @@ interface ContainerProps {
   as?: ElementType;
 }
 
-export function Container({ children, className, as: Tag = "div" }: ContainerProps) {
+export function Container({
+  children,
+  className,
+  as: Tag = "div",
+}: ContainerProps) {
   return (
-    <Tag className={cn("mx-auto w-full max-w-[1400px] px-6 sm:px-10 lg:px-16", className)}>
+    <Tag
+      className={cn(
+        "mx-auto w-full max-w-300 px-6 sm:px-8 lg:px-12",
+        className,
+      )}
+    >
       {children}
     </Tag>
   );

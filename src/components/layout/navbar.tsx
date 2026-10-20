@@ -40,28 +40,30 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
+        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         isScrolled || isOpen
-          ? "border-b border-border bg-bg/80 backdrop-blur-md"
-          : "border-b border-transparent bg-transparent",
+          ? "border-b border-border bg-[#08090a]/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.5)]"
+          : "border-b border-white/4 bg-[#08090a]/30 backdrop-blur-md",
       )}
     >
-      <Container className="flex h-20 items-center justify-between">
+      <Container className="flex h-16 items-center justify-between">
         <Link
           href="#top"
-          className="font-mono text-sm font-medium tracking-widest text-text transition-colors hover:text-accent"
+          className="group flex items-center gap-1 font-mono text-sm font-medium tracking-widest text-text transition-colors hover:text-white"
           onClick={handleLinkClick}
         >
-          {site.initials}
-          <span className="text-accent">.</span>
+          <span>{site.initials}</span>
+          <span className="text-accent drop-shadow-[0_0_8px_rgba(94,106,210,0.8)] transition-transform duration-200 group-hover:scale-125">
+            .
+          </span>
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-9 md:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-text-muted transition-colors hover:text-text"
+              className="rounded-md px-3 py-1.5 text-xs font-medium text-text-muted transition-all duration-150 hover:bg-white/6 hover:text-white"
             >
               {link.label}
             </Link>
@@ -71,7 +73,7 @@ export function Navbar() {
         <div className="hidden md:block">
           <Link
             href="#contact"
-            className="inline-flex items-center rounded-full border border-border-strong px-5 py-2.5 text-sm font-medium text-text transition-all duration-300 hover:border-accent/60 hover:text-accent-text"
+            className="inline-flex items-center rounded-full border border-border bg-white/3 px-4 py-1.5 text-xs font-medium text-text transition-all duration-150 hover:border-border-strong hover:bg-white/8 hover:text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] active:scale-[0.98]"
           >
             Let&rsquo;s Talk
           </Link>
@@ -83,27 +85,35 @@ export function Navbar() {
           aria-expanded={isOpen}
           aria-controls="mobile-nav"
           aria-label={isOpen ? "Close menu" : "Open menu"}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full text-text md:hidden"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-white/3 text-text transition-colors hover:bg-white/6 md:hidden"
         >
-          {isOpen ? <X size={22} aria-hidden /> : <Menu size={22} aria-hidden />}
+          {isOpen ? (
+            <X size={18} aria-hidden />
+          ) : (
+            <Menu size={18} aria-hidden />
+          )}
         </button>
       </Container>
 
       <div
         id="mobile-nav"
         className={cn(
-          "grid overflow-hidden bg-bg transition-[grid-template-rows] duration-300 ease-out md:hidden",
+          "grid overflow-hidden bg-[#08090a]/95 backdrop-blur-2xl transition-[grid-template-rows] duration-300 ease-out md:hidden",
           isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
         )}
       >
         <div className="overflow-hidden border-b border-border">
-          <Container as="nav" aria-label="Mobile" className="flex flex-col gap-1 py-6">
+          <Container
+            as="nav"
+            aria-label="Mobile"
+            className="flex flex-col gap-1 py-6"
+          >
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={handleLinkClick}
-                className="border-b border-border py-4 text-2xl font-medium text-text last:border-none"
+                className="border-b border-border/50 py-3.5 text-lg font-medium text-text transition-colors hover:text-accent-text last:border-none"
               >
                 {link.label}
               </Link>
@@ -111,7 +121,7 @@ export function Navbar() {
             <Link
               href="#contact"
               onClick={handleLinkClick}
-              className="mt-5 inline-flex w-fit items-center rounded-full bg-text px-6 py-3 text-sm font-medium text-bg"
+              className="mt-4 inline-flex w-fit items-center rounded-full border border-white/15 bg-accent px-5 py-2.5 text-xs font-medium text-white shadow-[0_0_20px_-4px_rgba(94,106,210,0.6)]"
             >
               Let&rsquo;s Talk
             </Link>

@@ -47,23 +47,23 @@ const totalContributions = weeks
   .reduce((sum, day) => sum + day.count, 0);
 
 export const githubStats: GithubStats = {
-  username: "kaimercer",
+  username: "quyng24",
   totalContributions,
   currentStreak: 14,
   longestStreak: 46,
   weeks,
   topRepos: [
     {
-      name: "robot_builder",
-      description: "Real-time 3D product configurator built with R3F.",
+      name: "robot-builder",
+      description: "Modular 3D robot builder & real-time Rapier physics simulator in the browser.",
       language: "TypeScript",
       stars: 312,
       forks: 41,
       url: "https://github.com/quyng24/robot-builder",
     },
     {
-      name: "LingoHub",
-      description: "A platform for learning English through games and real-life communication scenarios.",
+      name: "lingo_hub",
+      description: "Daily English micro-learning & arcade game hub powered by Spaced Repetition (SRS) and Supabase.",
       language: "TypeScript",
       stars: 198,
       forks: 22,
@@ -71,7 +71,7 @@ export const githubStats: GithubStats = {
     },
     {
       name: "project_sumary",
-      description: "A space showcasing experimental projects and interactive UI components.",
+      description: "Interactive UI experiments & physics mini-games built with Svelte 5 (Runes).",
       language: "Svelte",
       stars: 154,
       forks: 19,

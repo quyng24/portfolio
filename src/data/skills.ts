@@ -16,7 +16,8 @@ export const skills: Skill[] = [
   { name: "NestJS", category: "Backend", level: "core" },
   { name: "Python", category: "Backend", level: "core" },
   { name: "FastAPI", category: "Backend", level: "core" },
-  { name: "PortgreSQL", category: "Backend", level: "core" },
+  { name: "PostgreSQL", category: "Backend", level: "core" },
+  { name: "Supabase", category: "Backend", level: "core" },
   { name: "Kotlin", category: "Backend", level: "proficient" },
 
   // 3D & Interactive
@@ -30,6 +31,7 @@ export const skills: Skill[] = [
   // Tooling & Platform
   { name: "Git / GitHub", category: "Tooling & Platform", level: "core" },
   { name: "Vercel", category: "Tooling & Platform", level: "core" },
+  { name: "Playwright (E2E)", category: "Tooling & Platform", level: "proficient" },
   { name: "Docker", category: "Tooling & Platform", level: "proficient" },
   { name: "Figma", category: "Tooling & Platform", level: "proficient" },
   { name: "Postman", category: "Tooling & Platform", level: "proficient" },
